@@ -1,8 +1,11 @@
 package leetcode.api.model;
 
+import lombok.Data;
+
 import java.util.Collections;
 import java.util.Map;
 
+@Data
 public class StatsResponse {
     private final String status;
     private final String message;
@@ -42,70 +45,25 @@ public class StatsResponse {
         return new StatsResponse(status, message, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, Collections.emptyMap());
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public int getTotalSolved() {
-        return totalSolved;
-    }
-
-    public int getTotalQuestions() { return totalQuestions; }
-
-    public int getEasySolved() {
-        return easySolved;
-    }
-
-    public int getTotalEasy() {
-        return totalEasy;
-    }
-
-    public int getMediumSolved() {
-        return mediumSolved;
-    }
-
-    public int getTotalMedium() {
-        return totalMedium;
-    }
-
-    public int getHardSolved() {
-        return hardSolved;
-    }
-
-    public int getTotalHard() {
-        return totalHard;
-    }
-
-    public float getAcceptanceRate() {
-        return acceptanceRate;
-    }
-
-    public int getRanking() {
-        return ranking;
-    }
-
-    public int getContributionPoints() {
-        return contributionPoints;
-    }
-
-    public int getReputation() {
-        return reputation;
-    }
-
-    public Map<String, Integer> getSubmissionCalendar() {
-        return submissionCalendar;
-    }
-
     public boolean equals(StatsResponse s) {
         // Compared with itself
         if (s == this) {
             return true;
         }
 
-        return status.equals(s.getStatus()) && message.equals(s.getMessage()) && totalSolved == s.getTotalSolved() && totalQuestions == s.getTotalQuestions() && easySolved == s.getEasySolved() && totalEasy == s.getTotalEasy() && mediumSolved == s.getMediumSolved() && totalMedium == s.getTotalMedium() && hardSolved == s.getHardSolved() && totalHard == s.getTotalHard() && acceptanceRate == s.getAcceptanceRate() && ranking == s.getRanking() && contributionPoints == s.getContributionPoints() && reputation == s.getReputation();
+        return status.equals(s.getStatus()) &&
+                message.equals(s.getMessage()) &&
+                totalSolved == s.getTotalSolved() &&
+                totalQuestions == s.getTotalQuestions()
+                && easySolved == s.getEasySolved() &&
+                totalEasy == s.getTotalEasy() &&
+                mediumSolved == s.getMediumSolved() &&
+                totalMedium == s.getTotalMedium()
+                && hardSolved == s.getHardSolved() &&
+                totalHard == s.getTotalHard() &&
+                acceptanceRate == s.getAcceptanceRate() &&
+                ranking == s.getRanking() &&
+                contributionPoints == s.getContributionPoints() &&
+                reputation == s.getReputation();
     }
 }

@@ -13,8 +13,12 @@ import java.util.Optional;
 @RestController
 @CrossOrigin(origins = "*")
 public class UserController {
-    @Autowired
+
     private StatsService statsService;
+
+    public UserController(StatsService statsService) {
+        this.statsService = statsService;
+    }
 
     @GetMapping(value ={"/{username}", "/"})
     public StatsResponse getStats(@PathVariable Optional<String> username) {
